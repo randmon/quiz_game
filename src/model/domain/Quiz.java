@@ -30,14 +30,6 @@ public class Quiz {
         return currentQuestion.getAnswerList();
     }
 
-    public List<Boolean> isCorrectAnswer(List<String> input) {
-        List<Boolean> result = new ArrayList<>();
-        for (String s : input) {
-            result.add(currentQuestion.isCorrect(s));
-        }
-        return result;
-    }
-
     public boolean isCorrectAnswer(String input) {
         return currentQuestion.isCorrect(input);
     }

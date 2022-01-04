@@ -28,9 +28,11 @@ public class FileManager {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] params = line.split("\\|");
-                ArrayList<String> l = new ArrayList<>(Arrays.asList(params));
-                result.add(l);
+                if (!line.startsWith("//")) {
+                    String[] params = line.split("\\|");
+                    ArrayList<String> l = new ArrayList<>(Arrays.asList(params));
+                    result.add(l);
+                }
             }
             scanner.close();
         } catch (FileNotFoundException fnf) {
@@ -50,6 +52,7 @@ public class FileManager {
             switch (l.get(0)) {
                 case "m" :
                     MultipleChoice q = new MultipleChoice(l.get(1), l.get(2));
+                    q.addPossibleAnswer(l.get(2)); //First answer in document is always correct answer
                     for (String s : l.subList(3, l.size())) {
                         q.addPossibleAnswer(s);
                     }

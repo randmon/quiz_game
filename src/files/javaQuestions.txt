@@ -1,12 +1,22 @@
+//This is an example of a document containing questions for the quiz
+//A comment starts with a double slash ("//"). These lines will be ignored by the file manager
+//The document starts with a title. This title will be displayed on the app window.
 Java Quiz
-m|What is a correct syntax to output "Hello World" in Java?|System.out.println("Hello World");|Console.WriteLine("Hello World");|System.out.println("Hello World");|print ("Hello World");|echo("Hello World");
-m|Java is short for "JavaScript".|False|True|False
-m|Which line is a comment in Java?|// This is a comment|# This is a comment|// This is a comment|<!--This is a comment-->|--This is a comment
-m|The value of a string variable can be surrounded by single quotes.|False|True|False
+//Each field of a question is separated by a single vertical line ("|")
+//The questions start with the type: "m" = multiple choice / "w" = written answer. More types may be added in the future
+//The second field is the prompt, the question itself
+//The third field is the correct answer
+//The rest depends on the type of question
+//w - For written answers there are no more fields
+//m - For multiple choice there are the remaining (wrong) answers
+m|What is a correct syntax to output "Hello World" in Java?|System.out.println("Hello World");|Console.WriteLine("Hello World");|print ("Hello World");|echo("Hello World");
+m|Java is short for "JavaScript".|False|True
+m|Which line is a comment in Java?|// This is a comment|# This is a comment|<!--This is a comment-->|--This is a comment
+m|The value of a string variable can be surrounded by single quotes.|False|True
 w|Array indexes start with:|0
-m|What is the correct way to create an object called myObj of MyClass?|MyClass myObj = new MyClass();|new myObj = MyClass();|MyClass myObj = new MyClass();|class myObj = new MyClass();|class MyClass = new myObj();
-m|Which keyword is used to import a package from the Java API library?|import|lib|package|import|getlib
-m|A Java array holds:|values of the same data type|values of the same data type|unique values of the same data type|values of different data types|unique values of different data types
+m|What is the correct way to create an object called myObj of MyClass?|MyClass myObj = new MyClass();|new myObj = MyClass();|class myObj = new MyClass();|class MyClass = new myObj();
+m|Which keyword is used to import a package from the Java API library?|import|lib|package|getlib
+m|A Java array holds:|values of the same data type|unique values of the same data type|values of different data types|unique values of different data types
 w|What is the output: int[] nums = {1, 2, 3, 4, 5}; System.out.println(nums[1] + nums[3]);|6
-m|The last value of an array can be found at index:|array.length()-1|0|-1|array.length()|array.length()-1
-m|Two or more methods with the same name in the same class with different arguments can be called:|method overloading|method overriding|method overloading|method extension|method implementation
+m|The last value of an array can be found at index:|array.length()-1|0|-1|array.length()
+m|Two or more methods with the same name in the same class with different arguments can be called:|method overloading|method overriding|method extension|method implementation

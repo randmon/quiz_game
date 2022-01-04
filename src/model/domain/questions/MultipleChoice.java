@@ -3,6 +3,7 @@ package model.domain.questions;
 import model.DomainException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MultipleChoice extends Question {
@@ -19,18 +20,8 @@ public class MultipleChoice extends Question {
     }
 
     @Override
-    public String toString() {
-       StringBuilder result = new StringBuilder(super.toString());
-       int i = 1;
-       for (String s : possibleAnswers) {
-           result.append("\n").append("\t(").append(i).append(") ").append(s);
-           i++;
-       }
-       return result.toString();
-    }
-
-    @Override
     public List<String> getAnswerList() {
+        Collections.shuffle(possibleAnswers); //Randomize list
         return possibleAnswers;
     }
 
