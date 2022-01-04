@@ -50,9 +50,9 @@ public class MainView {
         quizPane.showQuestion(type);
     }
 
-    public void gameOver(int points) {
+    public void gameOver(int points, int total) {
         root.getChildren().clear();
-        GameOverPane gameOverPane = new GameOverPane(points);
+        GameOverPane gameOverPane = new GameOverPane(points, total);
         gameOverPane.setPrefHeight(height);
         gameOverPane.setPrefWidth(width);
         root.getChildren().add(gameOverPane);

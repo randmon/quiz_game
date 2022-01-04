@@ -54,4 +54,8 @@ public class Facade extends Observable {
     public int getPoints() {
         return quiz.getPoints();
     }
+
+    public int getTotalAmount() {
+        return quiz.getTotalAmount();
+    }
 }

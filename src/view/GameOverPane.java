@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 
 public class GameOverPane extends VBox {
 
-    public GameOverPane(int points) {
+    public GameOverPane(int points, int total) {
         super(50);
         getStyleClass().add("gameoverVB");
         setAlignment(Pos.CENTER);
@@ -17,7 +17,7 @@ public class GameOverPane extends VBox {
         gameOverLabel.getStyleClass().add("prompt");
         getChildren().add(gameOverLabel);
 
-        Label pointsLabel = new Label("Points: " + points);
+        Label pointsLabel = new Label("Points: " + points + "/" + total);
         pointsLabel.getStyleClass().add("prompt");
         getChildren().add(pointsLabel);
 

@@ -31,7 +31,7 @@ public class Controller implements Observer {
                 view.answer(true);
                 break;
             case GAMEOVER:
-                view.gameOver(model.getPoints());
+                view.gameOver(model.getPoints(), model.getTotalAmount());
                 break;
         }
     }

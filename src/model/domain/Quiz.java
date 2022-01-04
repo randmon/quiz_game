@@ -77,4 +77,8 @@ public class Quiz {
         Question q = remainingQuestions.peekFirst();
         return q.getType();
     }
+
+    public int getTotalAmount() {
+        return questionDB.getQuestions().size();
+    }
 }
