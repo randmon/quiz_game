@@ -9,11 +9,14 @@ public class Quiz {
     private final QuestionDB questionDB;
     private final Deque<Question> remainingQuestions;
     private Question currentQuestion;
+    private String title;
+    private int points;
 
     public Quiz(String path) {
-        questionDB = new QuestionDB(path);
+        questionDB = new QuestionDB(path, this);
         remainingQuestions = new LinkedList<>();
         remainingQuestions.addAll(questionDB.getQuestions());
+        points = 0;
     }
 
     public Question getNextQuestion() throws NoSuchElementException {
@@ -37,7 +40,34 @@ public class Quiz {
         return currentQuestion.isCorrect(input);
     }
 
-    public String getRightAnswer() {
+    public String getCorrectAnswer() {
         return currentQuestion.getCorrectAnswer();
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void addPoint() {
+        ++points;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public boolean hasQuestionsLeft() {
+        return remainingQuestions.size() > 0;
+    }
+
+    public boolean answer(String s) {
+        if (isCorrectAnswer(s)) {
+            addPoint();
+            return true;
+        } else return false;
     }
 }

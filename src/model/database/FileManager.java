@@ -1,6 +1,7 @@
 package model.database;
 
 import model.DomainException;
+import model.domain.Quiz;
 import model.domain.questions.MultipleChoice;
 import model.domain.questions.Question;
 
@@ -13,6 +14,7 @@ import java.util.Scanner;
 
 public class FileManager {
     private String path;
+
     public FileManager(String path) {
         this.path = path;
     }
@@ -39,9 +41,11 @@ public class FileManager {
         return result;
     }
 
-    public List<Question> loadQuestions() {
+    public List<Question> loadQuestions(Quiz quiz) {
         List<Question> questions = new ArrayList<>();
         List<List<String>> lines = load();
+        quiz.setTitle(lines.get(0).get(0));
+        lines.remove(0);
         for (List<String> l : lines) {
             switch (l.get(0)) {
                 case "m" :

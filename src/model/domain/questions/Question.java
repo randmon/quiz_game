@@ -37,4 +37,8 @@ public abstract class Question {
     }
 
     public abstract List<String> getAnswerList();
+
+    public String getPrompt() {
+        return propmt;
+    }
 }

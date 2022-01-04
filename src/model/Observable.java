@@ -1,6 +1,7 @@
 package model;
 
 import controller.Observer;
+import model.domain.QuizEvent;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,9 +17,9 @@ public class Observable {
         observers.add(observer);
     }
 
-    public void updateAll() {
+    public void updateAll(QuizEvent event) {
         for (Observer o : observers) {
-            o.update();
+            o.update(event);
         }
     }
 }

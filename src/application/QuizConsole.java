@@ -28,11 +28,11 @@ public class QuizConsole {
                         points++;
                     } else {
                         System.out.println("Wrong answer");
-                        System.out.println("The correct answer was: " + quiz.getRightAnswer());
+                        System.out.println("The correct answer was: " + quiz.getCorrectAnswer());
                     }
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("Wrong answer");
-                    System.out.println("The correct answer was: " + quiz.getRightAnswer());
+                    System.out.println("The correct answer was: " + quiz.getCorrectAnswer());
                 }
             }
         } catch (NoSuchElementException e) {

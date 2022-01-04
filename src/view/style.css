@@ -1,0 +1,52 @@
+.grid {
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+    -fx-background-color: ghostwhite;
+}
+
+.prompt {
+    -fx-font-family: Consolas;
+    -fx-font-size: 40;
+    -fx-text-fill: #707070;
+}
+
+.answersVB {
+    -fx-background-color: #DCECF2;
+}
+
+.button {
+    -fx-pref-height: 60;
+    -fx-background-color: ghostwhite;
+    -fx-background-radius: 10;
+    -fx-font-family: Consolas;
+    -fx-font-size: 20;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: rgba(248, 248, 255, 0.8);
+}
+.button:pressed {
+    -fx-background-color: rgba(248, 248, 255, 0.5);
+}
+.button:disabled {
+    -fx-opacity: 1.0;
+}
+
+.wrongVB {
+    -fx-background-color: #F2DCE2;
+}
+
+.correctVB {
+    -fx-background-color: #E3F1E3;
+}
+
+.selectedWrong {
+    -fx-background-color: #faa69d;
+}
+.rightAnswer {
+    -fx-background-color: #b4fa9d;
+}
+
+.gameoverVB {
+    -fx-background-color: #a0c4e8;
+}
