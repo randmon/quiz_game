@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 public class GameOverPane extends VBox {
 
     public GameOverPane(int points) {
-        super(20);
+        super(50);
         getStyleClass().add("gameoverVB");
         setAlignment(Pos.CENTER);
 

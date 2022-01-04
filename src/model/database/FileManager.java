@@ -4,6 +4,7 @@ import model.DomainException;
 import model.domain.Quiz;
 import model.domain.questions.MultipleChoice;
 import model.domain.questions.Question;
+import model.domain.questions.WrittenAnswer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +32,6 @@ public class FileManager {
                 ArrayList<String> l = new ArrayList<>(Arrays.asList(params));
                 result.add(l);
             }
-            System.out.println("Successfully loaded " + result.size() + " questions from " + path);
             scanner.close();
         } catch (FileNotFoundException fnf) {
             throw new DomainException(path + " doesn't exist");
@@ -55,6 +55,9 @@ public class FileManager {
                     }
                     questions.add(q);
                     break;
+                case "w":
+                    WrittenAnswer w = new WrittenAnswer(l.get(1), l.get(2));
+                    questions.add(w);
             }
         }
         return questions;

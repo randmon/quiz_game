@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -20,15 +21,14 @@ public class MainView {
         controller.setView(this);
         root = new Group();
         Scene scene = new Scene(root, width, height);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style/style.css")).toExternalForm());
 
         stage.setTitle(controller.getTitle());
-        //stage.getIcons().add(new Image("icon.png"));
+        stage.getIcons().add(new Image("view/img/icon.png"));
         stage.setResizable(false);
         stage.setScene(scene);
         stage.sizeToScene();
         stage.show();
-
 
         startQuiz();
     }
@@ -46,8 +46,8 @@ public class MainView {
         quizPane.answer(correct);
     }
 
-    public void showNextQuestion() {
-        quizPane.showQuestion();
+    public void showNextQuestion(String type) {
+        quizPane.showQuestion(type);
     }
 
     public void gameOver(int points) {

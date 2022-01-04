@@ -1,7 +1,9 @@
 package model.domain;
 
 import model.database.QuestionDB;
+import model.domain.questions.MultipleChoice;
 import model.domain.questions.Question;
+import model.domain.questions.WrittenAnswer;
 
 import java.util.*;
 
@@ -69,5 +71,10 @@ public class Quiz {
             addPoint();
             return true;
         } else return false;
+    }
+
+    public String getNextType() {
+        Question q = remainingQuestions.peekFirst();
+        return q.getType();
     }
 }

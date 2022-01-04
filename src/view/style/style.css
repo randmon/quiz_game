@@ -1,0 +1,88 @@
+.grid {
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+    -fx-background-color: ghostwhite;
+}
+
+.prompt {
+    -fx-font-family: Consolas;
+    -fx-font-size: 40;
+    -fx-text-fill: #2c2c38;
+}
+
+.vb {
+    -fx-background-color: #DCECF2;
+}
+
+.button {
+    -fx-pref-height: 60;
+    -fx-background-color: ghostwhite;
+    -fx-background-radius: 30;
+    -fx-font-family: Consolas;
+    -fx-font-size: 20;
+    -fx-cursor: hand;
+    -fx-text-fill: #2c2c38;
+    -fx-border-color: #2c2c38;
+    -fx-border-radius: 30;
+    -fx-border-width: 3;
+}
+.button:hover {
+    -fx-background-color: rgba(248, 248, 255, 0.8);
+}
+.button:pressed {
+    -fx-background-color: rgba(248, 248, 255, 0.5);
+}
+.button:disabled {
+    -fx-opacity: 1.0;
+}
+
+.wrongVB {
+    -fx-background-color: #F2DCE2;
+}
+
+.correctVB {
+    -fx-background-color: #E3F1E3;
+}
+
+.selectedWrong {
+    -fx-background-color: #fc9389;
+}
+.rightAnswer {
+    -fx-background-color: #98ef7c;
+}
+
+.gameoverVB {
+    -fx-background-color: #a0c4e8;
+}
+
+.continueButton {
+    -fx-background-color: #35353d;
+    -fx-text-fill: white;
+}
+.continueButton:hover {
+    -fx-background-color: rgba(53, 53, 61, 0.8);
+}
+.continueButton:selected {
+    -fx-background-color: rgba(53, 53, 61, 0.5);
+}
+
+.text-field {
+    -fx-text-fill: #2c2c38;
+    -fx-max-width: 700;
+    -fx-font-family: Consolas;
+    -fx-font-size: 20;
+    -fx-alignment: center;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+.text-field:disabled {
+    -fx-opacity: 1.0;
+}
+.text-field:focused {
+    -fx-background-color: white;
+}
+
+.correctLabel {
+    -fx-text-fill: #2c2c38;
+    -fx-font-family: Consolas;
+    -fx-font-size: 20;
+}

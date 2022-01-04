@@ -7,7 +7,7 @@ import model.Facade;
 import view.MainView;
 
 public class QuizApp extends Application {
-    private final Facade model = new Facade("src/files/questions.txt");
+    private final Facade model = new Facade("src/files/javaQuestions.txt");
     private final Controller controller = new Controller(model);
 
     public static void main(String[] args) {

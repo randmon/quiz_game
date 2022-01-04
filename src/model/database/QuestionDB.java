@@ -8,10 +8,9 @@ import java.util.List;
 
 public class QuestionDB {
     private List<Question> questions;
-    private FileManager fileManager;
 
     public QuestionDB(String path, Quiz quiz) {
-        fileManager = new FileManager(path);
+        FileManager fileManager = new FileManager(path);
         questions = new LinkedList<>();
         questions = fileManager.loadQuestions(quiz);
     }

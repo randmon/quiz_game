@@ -18,8 +18,11 @@ public class Controller implements Observer {
     @Override
     public void update(QuizEvent event) {
         switch (event) {
-            case NEXT_QUESTION:
-                view.showNextQuestion();
+            case NEXT_QUESTION_W:
+                view.showNextQuestion("w");
+                break;
+            case NEXT_QUESTION_M:
+                view.showNextQuestion("m");
                 break;
             case ANSWER_WRONG:
                 view.answer(false);

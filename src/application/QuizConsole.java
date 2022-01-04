@@ -1,13 +1,16 @@
 package application;
 
 import model.domain.Quiz;
+import model.domain.questions.MultipleChoice;
+import model.domain.questions.Question;
+import model.domain.questions.WrittenAnswer;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class QuizConsole {
     public static void main(String[] args) {
-        Quiz quiz = new Quiz("src/files/questions.txt");
+        Quiz quiz = new Quiz("src/files/javaQuestions.txt");
         play(quiz);
     }
 
@@ -17,12 +20,19 @@ public class QuizConsole {
             Scanner scanner = new Scanner(System.in);
             while (true) {
                 System.out.println("----------------------------------------------------");
-                System.out.println(quiz.getNextQuestion());
+
+                Question q = quiz.getNextQuestion();
+                System.out.println(q);
                 System.out.print("Answer: ");
 
-                int input = scanner.nextInt();
+                String input = scanner.nextLine();
                 try {
-                    String s = quiz.getPossibleAnswers().get(input - 1);
+                    String s = "";
+                    if (q instanceof MultipleChoice) {
+                        s = quiz.getPossibleAnswers().get(Integer.parseInt(input) - 1);
+                    } else if (q instanceof WrittenAnswer) {
+                        s = input;
+                    }
                     if (quiz.isCorrectAnswer(s)) {
                         System.out.println("Correct");
                         points++;

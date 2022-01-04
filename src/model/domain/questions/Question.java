@@ -5,11 +5,11 @@ import model.DomainException;
 import java.util.*;
 
 public abstract class Question {
-    private String propmt;
+    private String prompt;
     private String correctAnswer;
 
     public Question(String propmt, String correctAnswer) {
-        setPropmt(propmt);
+        setPrompt(propmt);
         setCorrecthAnswer(correctAnswer);
     }
 
@@ -22,14 +22,14 @@ public abstract class Question {
         correctAnswer = answer;
     }
 
-    private void setPropmt(String propmt) {
-        if (propmt == null || propmt.length() == 0) throw new DomainException("Prompt cannot be empty");
-        this.propmt = propmt;
+    private void setPrompt(String prompt) {
+        if (prompt == null || prompt.length() == 0) throw new DomainException("Prompt cannot be empty");
+        this.prompt = prompt;
     }
 
     @Override
     public String toString() {
-        return "Question: " + propmt;
+        return "Question: " + prompt;
     }
 
     public String getCorrectAnswer() {
@@ -39,6 +39,8 @@ public abstract class Question {
     public abstract List<String> getAnswerList();
 
     public String getPrompt() {
-        return propmt;
+        return prompt;
     }
+
+    public abstract String getType();
 }

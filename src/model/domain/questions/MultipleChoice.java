@@ -33,4 +33,9 @@ public class MultipleChoice extends Question {
     public List<String> getAnswerList() {
         return possibleAnswers;
     }
+
+    @Override
+    public String getType() {
+        return "m";
+    }
 }

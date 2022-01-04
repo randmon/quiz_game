@@ -10,22 +10,34 @@ public class QuizPane extends VBox {
     private QuestionPane questionPane;
 
     public QuizPane(Controller controller) {
+        super(20);
         this.controller = controller;
         setAlignment(Pos.TOP_CENTER);
     }
 
-    public void showQuestion() {
+    public void showQuestion(String type) {
+        getStyleClass().clear();
+        getStyleClass().add("vb");
         getChildren().clear();
-        questionPane = new QuestionPane(controller);
+        questionPane = new QuestionPane(controller, type);
         getChildren().add(questionPane);
     }
 
     public void answer(boolean correct) {
-        if (correct) questionPane.answeredCorrect();
-        else questionPane.answeredWrong();
+        if (correct) {
+            getStyleClass().clear();
+            getStyleClass().add("correctVB");
+            questionPane.answeredCorrect();
+        }
+        else {
+            getStyleClass().clear();
+            getStyleClass().add("wrongVB");
+            questionPane.answeredWrong();
+        }
 
         //Show next button
         Button nextButton = new Button("Continue");
+        nextButton.getStyleClass().add("continueButton");
         nextButton.setOnAction(event -> controller.nextQuestion());
         getChildren().add(nextButton);
     }
