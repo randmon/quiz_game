@@ -1,0 +1,4 @@
+m|What is a correct syntax to output "Hello World" in Java?|System.out.println("Hello World");|Console.WriteLine("Hello World");|System.out.println("Hello World");|print ("Hello World");|echo("Hello World");
+m|Java is short for "JavaScript".|False|True|False
+m|Which line is a comment in Java?|// This is a comment|# This is a comment|// This is a comment|<!--This is a comment-->|--This is a comment
+m|The value of a string variable can be surrounded by single quotes.|False|True|False
