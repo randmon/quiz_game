@@ -12,7 +12,6 @@ public class Facade extends Observable {
         quiz = new Quiz(path);
     }
 
-
     public String getTitle() {
         return quiz.getTitle();
     }
@@ -23,10 +22,6 @@ public class Facade extends Observable {
 
     public List<String> getAnswers() {
         return quiz.getPossibleAnswers();
-    }
-
-    public void addPoint() {
-        quiz.addPoint();
     }
 
     public void answer(String s) {

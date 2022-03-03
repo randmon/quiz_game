@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Controller implements Observer {
     private MainView view;
-    private Facade model;
+    private final Facade model;
 
     public Controller(Facade model) {
         this.model = model;

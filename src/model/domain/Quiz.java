@@ -1,11 +1,12 @@
 package model.domain;
 
 import model.database.QuestionDB;
-import model.domain.questions.MultipleChoice;
 import model.domain.questions.Question;
-import model.domain.questions.WrittenAnswer;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Quiz {
     private final QuestionDB questionDB;

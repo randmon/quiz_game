@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileManager {
-    private String path;
+    private final String path;
 
     public FileManager(String path) {
         this.path = path;
@@ -50,6 +50,7 @@ public class FileManager {
         lines.remove(0);
         for (List<String> l : lines) {
             switch (l.get(0)) {
+                //TODO clean this up... no conditionals
                 case "m" :
                     MultipleChoice q = new MultipleChoice(l.get(1), l.get(2));
                     q.addPossibleAnswer(l.get(2)); //First answer in document is always correct answer
