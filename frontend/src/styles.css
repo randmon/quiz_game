@@ -1,0 +1,177 @@
+:root {
+	font-family: Consolas, "Roboto Mono", monospace;
+	color: #2c2c38;
+	background: #dcecf2;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+}
+
+button,
+input {
+	font: inherit;
+}
+
+button {
+	min-height: 60px;
+	padding: 12px 24px;
+	border: 3px solid #2c2c38;
+	border-radius: 30px;
+	color: #2c2c38;
+	background: ghostwhite;
+	font-size: 20px;
+	cursor: pointer;
+	transition: background-color 120ms ease, transform 120ms ease;
+}
+
+button:hover:not(:disabled) {
+	background: rgba(248, 248, 255, 0.8);
+}
+
+button:active:not(:disabled) {
+	transform: translateY(1px);
+	background: rgba(248, 248, 255, 0.5);
+}
+
+button:disabled {
+	opacity: 1;
+	cursor: default;
+}
+
+.quiz-shell {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 48px 24px;
+	transition: background-color 160ms ease;
+}
+
+.vb {
+	background: #dcecf2;
+}
+
+.correctVB {
+	background: #e3f1e3;
+}
+
+.wrongVB {
+	background: #f2dce2;
+}
+
+.gameoverVB {
+	justify-content: center;
+	background: #a0c4e8;
+}
+
+.question-panel {
+	display: flex;
+	width: min(100%, 1000px);
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+}
+
+.prompt {
+	max-width: 100%;
+	margin: 0;
+	color: #2c2c38;
+	font-size: clamp(28px, 4vw, 40px);
+	font-weight: 400;
+	line-height: 1.25;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+
+.answers {
+	display: grid;
+	width: min(100%, 700px);
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+
+.answer-button {
+	width: 100%;
+}
+
+.rightAnswer {
+	background: #98ef7c;
+}
+
+.selectedWrong {
+	background: #fc9389;
+}
+
+.written-answer {
+	display: flex;
+	width: min(100%, 700px);
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+.written-answer input {
+	width: 100%;
+	min-height: 60px;
+	padding: 12px 20px;
+	border: 0;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.8);
+	color: #2c2c38;
+	font-size: 20px;
+	text-align: center;
+}
+
+.written-answer input:focus {
+	outline: 3px solid #2c2c38;
+	background: white;
+}
+
+.written-answer input:disabled {
+	opacity: 1;
+}
+
+.correctLabel {
+	margin: 0;
+	color: #2c2c38;
+	font-size: 20px;
+	text-align: center;
+}
+
+.continueButton {
+	background: #35353d;
+	color: white;
+}
+
+.continueButton:hover:not(:disabled) {
+	background: rgba(53, 53, 61, 0.8);
+}
+
+.message-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 36px;
+}
+
+.status-message,
+.inline-error {
+	margin: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+.inline-error {
+	color: #8c1d18;
+}
