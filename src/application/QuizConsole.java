@@ -1,9 +1,7 @@
 package application;
 
 import model.domain.Quiz;
-import model.domain.questions.MultipleChoice;
 import model.domain.questions.Question;
-import model.domain.questions.WrittenAnswer;
 
 import java.util.List;
 import java.util.NoSuchElementException;
