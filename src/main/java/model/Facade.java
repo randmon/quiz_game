@@ -42,7 +42,7 @@ public class Facade extends Observable {
             if (type.equals("w")) updateAll(QuizEvent.NEXT_QUESTION_W);
             else if (type.equals("m")) updateAll(QuizEvent.NEXT_QUESTION_M);
         } else {
-            updateAll(QuizEvent.GAMEOVER);
+            updateAll(QuizEvent.GAME_OVER);
         }
     }
 

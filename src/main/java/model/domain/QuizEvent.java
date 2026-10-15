@@ -5,5 +5,5 @@ public enum QuizEvent {
     NEXT_QUESTION_W,
     ANSWER_CORRECT,
     ANSWER_WRONG,
-    GAMEOVER
+    GAME_OVER
 }

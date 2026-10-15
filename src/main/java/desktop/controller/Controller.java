@@ -1,8 +1,9 @@
-package controller;
+package desktop.controller;
 
 import model.Facade;
+import model.Observer;
 import model.domain.QuizEvent;
-import view.MainView;
+import desktop.view.MainView;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Controller implements Observer {
             case ANSWER_CORRECT:
                 view.answer(true);
                 break;
-            case GAMEOVER:
+            case GAME_OVER:
                 view.gameOver(model.getPoints(), model.getTotalAmount());
                 break;
         }

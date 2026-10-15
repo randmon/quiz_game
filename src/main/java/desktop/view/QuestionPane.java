@@ -1,6 +1,6 @@
-package view;
+package desktop.view;
 
-import controller.Controller;
+import desktop.controller.Controller;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -13,12 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionPane extends VBox {
-    private Label promptLabel;
-    private List<Button> answerButtons = new ArrayList<>();
+    private final List<Button> answerButtons = new ArrayList<>();
+    private final VBox answersVB;
+    private final Controller controller;
+    private final String type;
     private Button selectedAnswer, submitButton;
-    private VBox answersVB;
-    private Controller controller;
-    private String type;
     private TextField writtenAnswer;
 
     public QuestionPane(Controller controller, String type) {
@@ -26,7 +25,7 @@ public class QuestionPane extends VBox {
         this.setAlignment(Pos.TOP_CENTER);
         this.type = type;
 
-        promptLabel = new Label(controller.getPrompt());
+        Label promptLabel = new Label(controller.getPrompt());
         promptLabel.getStyleClass().add("prompt");
         promptLabel.setWrapText(true);
 
@@ -54,7 +53,7 @@ public class QuestionPane extends VBox {
             Button b = new Button(a);
             answerButtons.add(b);
             answersVB.getChildren().add(b);
-            b.setOnAction(event -> {
+            b.setOnAction(_ -> {
                 selectedAnswer = b;
                 controller.answer(b.getText());
             });
@@ -67,7 +66,7 @@ public class QuestionPane extends VBox {
 
         submitButton = new Button("Submit");
         answersVB.getChildren().add(submitButton);
-        submitButton.setOnAction(event -> {
+        submitButton.setOnAction(_ -> {
             controller.answer(writtenAnswer.getText());
             answersVB.getChildren().remove(submitButton);
         });
