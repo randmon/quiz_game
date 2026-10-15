@@ -1,6 +1,6 @@
-package view;
+package desktop.view;
 
-import controller.Controller;
+import desktop.controller.Controller;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -38,7 +38,7 @@ public class QuizPane extends VBox {
         //Show next button
         Button nextButton = new Button("Continue");
         nextButton.getStyleClass().add("continueButton");
-        nextButton.setOnAction(event -> controller.nextQuestion());
+        nextButton.setOnAction(_ -> controller.nextQuestion());
         getChildren().add(nextButton);
     }
 }

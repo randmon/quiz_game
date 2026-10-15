@@ -1,6 +1,5 @@
 package model;
 
-import controller.Observer;
 import model.domain.QuizEvent;
 
 import java.util.HashSet;
@@ -23,4 +22,3 @@ public class Observable {
         }
     }
 }
-

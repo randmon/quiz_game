@@ -1,6 +1,6 @@
-package view;
+package desktop.view;
 
-import controller.Controller;
+import desktop.controller.Controller;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import java.util.Objects;
 
 public class MainView {
-    private final Stage stage = new Stage();
     private final Controller controller;
     private final int width = 1280;
     private final int height = 720;
@@ -21,10 +20,13 @@ public class MainView {
         controller.setView(this);
         root = new Group();
         Scene scene = new Scene(root, width, height);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style/style.css")).toExternalForm());
+        String css = Objects.requireNonNull(getClass().getResource("style/style.css")).toExternalForm();
+        scene.getStylesheets().add(css);
 
+        Stage stage = new Stage();
         stage.setTitle(controller.getTitle());
-        stage.getIcons().add(new Image("view/img/icon.png"));
+        Image icon = new Image(Objects.requireNonNull(MainView.class.getResource("img/icon.png")).toExternalForm());
+        stage.getIcons().add(icon);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.sizeToScene();

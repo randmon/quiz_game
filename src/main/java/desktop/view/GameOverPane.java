@@ -1,4 +1,4 @@
-package view;
+package desktop.view;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -23,6 +23,6 @@ public class GameOverPane extends VBox {
 
         Button quit = new Button("Quit");
         getChildren().add(quit);
-        quit.setOnAction(event -> System.exit(0));
+        quit.setOnAction(_ -> System.exit(0));
     }
 }

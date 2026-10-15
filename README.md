@@ -1,5 +1,3 @@
-
-
 # Quiz game
 
 A very simple quiz application with questions read from a file.
@@ -42,7 +40,9 @@ input field.
 
 ## Make your own quiz file
 
-See [`src/files/javaQuestions.txt`](src/files/javaQuestions.txt) for an example.
+See [`src/main/resources/javaQuestions.txt`](src/main/resources/javaQuestions.txt) for an example.
+The sample quiz is packaged with the application and loaded as a classpath resource, so launching the built app does not
+depend on the repository working directory.
 The first line is the quiz title. Add one question per line, separating fields with `|` (so this character cannot appear
 inside a question or answer):
 

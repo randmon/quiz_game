@@ -56,7 +56,7 @@ public class Quiz {
     }
 
     public boolean hasQuestionsLeft() {
-        return remainingQuestions.size() > 0;
+        return !remainingQuestions.isEmpty();
     }
 
     public boolean answer(String s) {
@@ -68,6 +68,7 @@ public class Quiz {
 
     public String getNextType() {
         Question q = remainingQuestions.peekFirst();
+        if (q == null) throw new NoSuchElementException("No questions left");
         return q.getType();
     }
 

@@ -8,8 +8,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class QuizConsole {
-    public static void main(String[] args) {
-        Quiz quiz = new Quiz("src/files/javaQuestions.txt");
+    static void main() {
+        Quiz quiz = new Quiz("javaQuestions.txt");
         play(quiz);
     }
 

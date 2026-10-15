@@ -5,8 +5,8 @@ import java.util.List;
 
 public class WrittenAnswer extends Question {
 
-    public WrittenAnswer(String propmt, String correctAnswer) {
-        super(propmt, correctAnswer);
+    public WrittenAnswer(String prompt, String correctAnswer) {
+        super(prompt, correctAnswer);
     }
 
     @Override

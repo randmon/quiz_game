@@ -1,6 +1,6 @@
 package model.domain.questions;
 
-import model.DomainException;
+import model.QuizGameException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ public class MultipleChoice extends Question {
     }
 
     public void addPossibleAnswer(String s) {
-        if (s == null || s.length() == 0) throw new DomainException("Answer cannot be empty");
+        if (s == null || s.isEmpty()) throw new QuizGameException("Answer cannot be empty");
         possibleAnswers.add(s);
     }
 
