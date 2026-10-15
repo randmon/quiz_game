@@ -4,6 +4,18 @@
 
 A very simple quiz application with questions read from a file.
 
+## Build requirements
+
+Install a Java 25 JDK and Apache Maven 3.9 or newer. Build the project from the
+repository root with:
+
+```shell
+mvn clean package
+```
+
+The Maven build compiles the terminal and JavaFX applications and includes the
+JavaFX dependencies and view assets.
+
 There are two ways to run the application:
 
 ### Terminal
@@ -15,8 +27,15 @@ Interact by typing in the terminal.
 
 ### JavaFX Application
 
-Run the main method in the `QuizApp` class in the `src/application` package.
-Interact by clicking the right (or wrong) answer button, or writing the answer in the input box and pressing submit.
+Launch it from the repository root with:
+
+```shell
+mvn javafx:run
+```
+
+This configures the JavaFX runtime modules required by the application. Interact
+by clicking the right (or wrong) answer button, or writing the answer in the
+input box and pressing submit.
 
 ![quiz in javafx application](img/app.png)
 
