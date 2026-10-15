@@ -1,7 +1,7 @@
 package application;
 
-import model.domain.Quiz;
-import model.domain.questions.Question;
+import domain.Quiz;
+import domain.questions.Question;
 
 import java.util.List;
 import java.util.NoSuchElementException;

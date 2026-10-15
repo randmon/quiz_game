@@ -1,0 +1,4 @@
+Test Quiz
+m|What is 2 + 2?|4|3|5
+w|What is the capital of France?|Paris
+m|Which planet is known as the Red Planet?|Mars|Venus|Jupiter

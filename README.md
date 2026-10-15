@@ -4,39 +4,58 @@ A very simple quiz application with questions read from a file.
 
 ## Build requirements
 
-Install a Java 25 JDK and Apache Maven 3.9 or newer.
+Install a Java 25 JDK, Apache Maven 3.9 or newer, and Node.js 20.19 or newer for the React client.
 
-There are two ways to run the application:
+Build the Spring Boot application from the repository root:
 
 ### Terminal
 
 Build and run the terminal quiz from the repository root with:
 
 ```shell
-mvn -Pbackend clean package
+mvn clean package
 java -cp target/classes application.QuizConsole
 ```
 
 Enter your answers in the terminal.
 
-![quiz in the console](img/console.png)
+![quiz in the console](docs/img/console.png)
 
-### JavaFX Application
+## HTTP API
 
-Build and launch the desktop application from the repository root with:
+The Spring Boot REST backend exposes the game flow under `/api/v1`. Build and start it from the repository root:
 
 ```shell
-mvn -Pdesktop clean package
-mvn javafx:run
+mvn clean package
+java -jar target/quiz-game-1.0.1.jar
 ```
 
-This configures the JavaFX runtime modules required by the application. Answer multiple-choice questions by selecting an
-option, or type a written answer in the input box and press submit.
+The server listens on port `8080` by default. Set `SERVER_PORT` to choose another port.
+For local development, use `mvn spring-boot:run`.
 
-![quiz in javafx application](img/app.png)
+## React application
 
-Correct answers turn green. Incorrect answers turn red, and the correct answer is shown in green or displayed below the
-input field.
+The React client uses the REST API and runs on Vite's development server. Start the backend, then run these commands in a
+second terminal:
+
+```shell
+cd frontend
+npm install
+npm run dev
+```
+
+Open the URL printed by Vite. The client proxies `/api` requests to the backend at `http://localhost:8080`.
+
+Example request to start a game:
+
+```shell
+curl -X POST http://localhost:8080/api/v1/games \
+  -H "Content-Type: application/json" \
+  -d '{"quiz":"javaQuestions.txt"}'
+```
+
+The server returns the created game identifier and the current question without including the correct answer. Answer
+validation happens on the server, and subsequent answer requests return either the next question or the final score.
 
 ## Make your own quiz file
 
